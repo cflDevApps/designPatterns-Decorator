@@ -1,6 +1,6 @@
 package com.cflDevApps.dpDecorator.controlers;
 
-import com.cflDevApps.dpDecorator.contracts.Drink;
+import com.cflDevApps.dpDecorator.contracts.coffee.Drink;
 import com.cflDevApps.dpDecorator.dtos.CoffeeOrderRequest;
 import com.cflDevApps.dpDecorator.services.coffee.CoffeeBuilder;
 import org.springframework.beans.factory.annotation.Autowired;

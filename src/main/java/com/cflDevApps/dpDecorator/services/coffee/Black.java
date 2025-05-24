@@ -1,6 +1,6 @@
 package com.cflDevApps.dpDecorator.services.coffee;
 
-import com.cflDevApps.dpDecorator.contracts.Drink;
+import com.cflDevApps.dpDecorator.contracts.coffee.Drink;
 import org.springframework.stereotype.Service;
 
 @Service("Black")

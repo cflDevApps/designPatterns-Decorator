@@ -1,7 +1,7 @@
 package com.cflDevApps.dpDecorator.services.coffee.decorators;
 
-import com.cflDevApps.dpDecorator.contracts.Drink;
-import com.cflDevApps.dpDecorator.contracts.OptionalDrink;
+import com.cflDevApps.dpDecorator.contracts.coffee.Drink;
+import com.cflDevApps.dpDecorator.contracts.coffee.OptionalDrink;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;

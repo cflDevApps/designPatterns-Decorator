@@ -1,7 +1,7 @@
 package com.cflDevApps.dpDecorator.services.coffee;
 
-import com.cflDevApps.dpDecorator.contracts.Drink;
-import com.cflDevApps.dpDecorator.contracts.OptionalDrink;
+import com.cflDevApps.dpDecorator.contracts.coffee.Drink;
+import com.cflDevApps.dpDecorator.contracts.coffee.OptionalDrink;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

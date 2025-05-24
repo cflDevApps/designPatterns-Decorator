@@ -1,4 +1,4 @@
-package com.cflDevApps.dpDecorator.contracts;
+package com.cflDevApps.dpDecorator.contracts.coffee;
 
 
 /** * Interface representing a drink.

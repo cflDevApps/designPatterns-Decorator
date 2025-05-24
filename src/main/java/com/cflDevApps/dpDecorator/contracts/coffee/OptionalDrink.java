@@ -1,4 +1,4 @@
-package com.cflDevApps.dpDecorator.contracts;
+package com.cflDevApps.dpDecorator.contracts.coffee;
 
 /**
  * OptionalDrink interface extends the Drink interface and adds a method to set a base drink.
