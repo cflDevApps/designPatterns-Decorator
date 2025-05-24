@@ -1,0 +1,30 @@
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Decorator Pattern</title>
+    </head>
+    <body>
+        <h1 th:text="${title}"></h1>
+        <form th:action="@{/coffee/order}" method="post">
+            <label>Coffee Type:</label><br>
+                <input type="radio" id="black" name="coffeeType" value="Black" required>
+                <label for="black">Black</label><br>
+
+                <input type="radio" id="decaf" name="coffeeType" value="Decaffeinated">
+                <label for="decaf">Decaffeinated</label><br>
+
+                <input type="radio" id="blackTea" name="coffeeType" value="BlackTea">
+                <label for="decaf">Black tea</label><br><br>
+
+            <label>Options:</label><br>
+                <input type="checkbox" id="milk" name="options" value="Milk">
+                <label for="milk">Milk</label><br>
+
+                <input type="checkbox" id="cream" name="options" value="Cream">
+                <label for="cream">Cream</label><br>
+
+            <button type="submit">Order</button>
+        </form>
+
+    </body>
+</html>
