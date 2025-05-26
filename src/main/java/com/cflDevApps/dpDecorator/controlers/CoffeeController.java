@@ -18,38 +18,10 @@ import java.util.Set;
  * Client of Decorator Pattern
  */
 @Controller
-public class InitController {
+public class CoffeeController {
 
     @Autowired
     private CoffeeBuilder coffeeBuilder;
-
-    @GetMapping("/frete/{type}/{peso}")
-    public String home(Model model,
-                       @PathVariable("type") String freteType,
-                       @PathVariable("peso") String peso) {
-        model.addAttribute("title", String.format("Calculadora de Frete Iniciado: %s", freteType));
-
-
-        model.addAttribute("price", String.format("Preço: R$ %s", CURRENCY_FORMATTER(new BigDecimal(0))));
-        model.addAttribute("term", String.format("Prazo de entrega: %s", "0"));
-
-        return "index";
-    }
-
-    @PostMapping("/coffee/order")
-    public String home(Model model, CoffeeOrderRequest request) {
-
-
-        Drink finalDrink = coffeeBuilder.baseDrink(request.getCoffeeType()).withOptions(Set.of(request.getOptions())).build();
-
-
-        model.addAttribute("title", "Drink ordered:");
-        model.addAttribute("drinkDescription", String.format("%s", finalDrink.getDescription()));
-        model.addAttribute("drinkPrice", String.format("Total to pay: $%.2f", finalDrink.getPrice()));
-
-
-        return "coffee-order";
-    }
 
     @GetMapping("/coffee")
     public String home(Model model) {
@@ -58,13 +30,15 @@ public class InitController {
         return "coffee-form";
     }
 
-
-    private static String CURRENCY_FORMATTER(BigDecimal value) {
-        DecimalFormat df = new DecimalFormat("#.##");
-        df.setMinimumFractionDigits(2);
-        df.setMaximumFractionDigits(2);
-        return df.format(value);
+    @PostMapping("/coffee/order")
+    public String home(Model model, CoffeeOrderRequest request) {
+        Drink finalDrink = coffeeBuilder.baseDrink(request.getCoffeeType()).withOptions(Set.of(request.getOptions())).build();
+        model.addAttribute("title", "Drink ordered:");
+        model.addAttribute("drinkDescription", String.format("%s", finalDrink.getDescription()));
+        model.addAttribute("drinkPrice", String.format("Total to pay: $%.2f", finalDrink.getPrice()));
+        return "coffee-order";
     }
+
 
 
 }

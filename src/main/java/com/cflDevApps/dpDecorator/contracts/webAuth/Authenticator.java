@@ -1,6 +1,8 @@
 package com.cflDevApps.dpDecorator.contracts.webAuth;
 
+import com.cflDevApps.dpDecorator.dtos.User;
+
 public interface Authenticator {
 
-    public String authenticate(String username, String password);
+    public boolean authenticate(User user);
 }

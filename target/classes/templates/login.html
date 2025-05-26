@@ -1,0 +1,22 @@
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:insert th:replace="~{index :: common-head}"></th:insert>
+    <link th:href="@{/css/login.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login - Decorator</h1>
+        <p th:text="${error}"></p>
+        <form th:action="@{/login}" method="post">
+            <input type="text" id="username" name="username" placeholder="Telefone, nome de usuário ou email" required />
+            <input type="password" id="password" name="password" placeholder="Senha" required />
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="divider"><span>OU</span></div>
+        <div class="signup-link">
+            Não tem uma conta? <a th:href="@{/login}">Cadastre-se</a>
+        </div>
+    </div>
+</body>
+</html>
+
