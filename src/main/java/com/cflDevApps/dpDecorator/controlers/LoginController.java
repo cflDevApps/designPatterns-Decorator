@@ -37,12 +37,17 @@ public class LoginController {
     public String doLogin(Model model, User user) {
         try{
             loginService.doLogin(user);
-            return "redirect:/coffee"; // Redirect to coffee form if authentication is successful
+            return "redirect:/home"; // Redirect to coffee form if authentication is successful
         }catch (NotAuthorizedException | MaxAttemptsExceededException ex){
             model.addAttribute("error", ex.getMessage());
         }
         return "login";
     }
 
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        return "index";
+    }
 
 }

@@ -1,0 +1,67 @@
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <th:insert th:replace="~{index :: common-head}"></th:insert>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <form th:action="@{/files/process}" method="post" class="w-100 justify-content-center">
+        <div class="card w-75 mx-auto">
+          <div class="card-header text-center">
+            <h4 class="card-title mb-0" th:text="${title}"></h4>
+          </div>
+          <div class="card-body">
+
+            <div class="form-check ps-0 mb-3">
+              <div class="input-group input-group-lg">
+                <label class="input-group-text" for="data">Data</label>
+                <input type="text" class="form-control" id="data" name="data" aria-label="Text to process" aria-describedby="inputGroup-sizing-lg">
+              </div>
+            </div>
+
+            <h5 class="card-title">Action Type:</h5>
+            <div class="form-check mb-3">
+              <input type="radio" id="email" name="actionType" value="email" required class="form-check-input">
+              <label for="email" class="form-check-label">Send Email</label><br>
+
+              <input type="radio" id="sdb" name="actionType" value="database" class="form-check-input">
+              <label for="sdb" class="form-check-label">Save Data in DB</label><br>
+
+              <input type="radio" id="sc" name="actionType" value="cloud" class="form-check-input">
+              <label for="sc" class="form-check-label">Save data in the Cloud</label><br><br>
+            </div>
+
+            <h5 class="card-title">Encryptor Type:</h5>
+            <div class="form-check mb-3">
+              <input type="radio" id="aesCriptor" name="encryptorType" value="aesCriptor" class="form-check-input">
+              <label for="aesCriptor" class="form-check-label">AES Encryptor</label><br>
+
+              <input type="radio" id="rsaCriptor" name="encryptorType" value="rsaCriptor" class="form-check-input">
+              <label for="rsaCriptor" class="form-check-label">RSA Encryptor</label><br>
+            </div>
+
+            <h5 class="card-title">Compressor Type:</h5>
+            <div class="form-check mb-3">
+              <input type="radio" id="zipCompressor" name="compressorType" value="zipCompressor" class="form-check-input">
+              <label for="zipCompressor" class="form-check-label">ZIP</label><br>
+
+              <input type="radio" id="rarCompressor" name="compressorType" value="rarCompressor" class="form-check-input">
+              <label for="rarCompressor" class="form-check-label">RAR</label><br>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Process</button>
+            <a th:href="@{/home}" class="btn btn-primary">Home</a>
+          </div>
+
+        </div>
+      </form>
+
+
+
+      <a th:href="@{/home}">
+        <button type="button" class="btn btn-primary">Home</button>
+      </a>
+    </div>
+  </body>
+</html>

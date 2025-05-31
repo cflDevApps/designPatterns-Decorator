@@ -1,0 +1,24 @@
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <th:insert th:replace="~{index :: common-head}"></th:insert>
+</head>
+<body class="container">
+<div>
+    <div class="row">
+        <h2 th:text="${title}"></h2>
+    </div>
+    <div class="row">
+        <p th:text="${result}"></p>
+    </div>
+    <div class="row">
+        <div class="d-line-flex">
+            <a th:href="@{/home}" class="btn btn-primary">Home</a>
+            <a th:href="@{/files}" class="btn btn-primary">Process File</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

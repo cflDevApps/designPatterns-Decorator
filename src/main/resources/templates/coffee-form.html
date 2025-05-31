@@ -1,33 +1,43 @@
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
-        <title>Decorator Pattern</title>
+        <th:insert th:replace="~{index :: common-head}"></th:insert>
     </head>
-    <body>
-        <h1 th:text="${title}"></h1>
-        <form th:action="@{/coffee/order}" method="post">
-            <label>Coffee Type:</label><br>
-                <input type="radio" id="black" name="coffeeType" value="Black" required>
-                <label for="black">Black</label><br>
+    <body class="container">
+        <form th:action="@{/coffee/order}" method="post" class="w-100 justify-content-center">
+            <div class="card w-75 mx-auto">
+                <div class="card-header text-center">
+                    <h4 class="card-title mb-0" th:text="${title}"></h4>
+                </div>
+                <div class="card-body">
 
-                <input type="radio" id="decaf" name="coffeeType" value="Decaffeinated">
-                <label for="decaf">Decaffeinated</label><br>
+                        <h5 class="card-title">Coffee Type:</h5>
+                        <div class="form-check ms-3">
+                            <input type="radio" id="black" name="coffeeType" value="Black" required class="form-check-input">
+                            <label for="black" class="form-check-label">Black</label><br>
 
-                <input type="radio" id="blackTea" name="coffeeType" value="BlackTea">
-                <label for="decaf">Black tea</label><br><br>
+                            <input type="radio" id="decaf" name="coffeeType" value="Decaffeinated" class="form-check-input">
+                            <label for="decaf" class="form-check-label">Decaffeinated</label><br>
 
-            <label>Options:</label><br>
-                <input type="checkbox" id="milk" name="options" value="Milk">
-                <label for="milk">Milk</label><br>
+                            <input type="radio" id="blackTea" name="coffeeType" value="BlackTea" class="form-check-input">
+                            <label for="blackTea" class="form-check-label">Black tea</label><br><br>
+                        </div>
 
-                <input type="checkbox" id="cream" name="options" value="Cream">
-                <label for="cream">Cream</label><br>
+                        <h5 class="card-title">Side Options:</h5>
+                        <div class="form-check ms-3">
+                            <input type="checkbox" id="milk" name="options" value="Milk" class="form-check-input">
+                            <label for="milk" class="form-check-label">Milk</label><br>
 
-            <button type="submit">Order</button>
+                            <input type="checkbox" id="cream" name="options" value="Cream" class="form-check-input">
+                            <label for="cream" class="form-check-label">Cream</label><br>
+                        </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Order</button>
+                    <a th:href="@{/home}" class="btn btn-primary">Home</a>
+                </div>
+
+            </div>
         </form>
-
-        <a th:href="@{/login}">
-            <button type="button">Logout</button>
-        </a>
     </body>
 </html>
